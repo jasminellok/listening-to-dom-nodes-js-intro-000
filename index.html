@@ -50,9 +50,10 @@ const input = document.querySelector('input');
 input.addEventListener('keydown', function(e) {
   console.log(e.key);
 });
+//When entering value, it will return value on console
+
 
 const input = document.querySelector('input')
-
 input.addEventListener('keydown', function(e) {
   if (e.key === "g") {
     return e.preventDefault()
@@ -60,5 +61,26 @@ input.addEventListener('keydown', function(e) {
     console.log(e.key)
   }
 });
+//prevents a value from being entered
+
+let divs = document.querySelectorAll('div');
+function bubble(e) {
+  console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+}
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble);
+}
+//bubbling... something like it explodes and count down? it goes through things?
+
+divs = document.querySelectorAll('div');
+
+function capture(e) {
+  console.log(this.firstChild.nodeValue.trim() + ' captured');
+}
+
+for (let i = 0; i < divs.length; i++) {
+  // set the third argument to `true`!
+  divs[i].addEventListener('click', capture, true);
+}
 
 </script>
